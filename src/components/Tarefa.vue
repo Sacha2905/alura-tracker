@@ -12,6 +12,7 @@
 import { defineComponent } from 'vue'
 import Cronometro from './Cronometro.vue'
 import Box from './Box.vue'
+//Teste
 export default defineComponent({
     /*eslint-disable-next-line*/
     name: 'Tarefa',
