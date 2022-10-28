@@ -1,24 +1,28 @@
 <template>
-<div class="box has-text-weight-bold">
+<Box>
     <div class="columns">
-        <div class="column is-7">
-            Descricao da tarefa
-        </div>
+        <div class="column is-7">{{ tarefa.descricao || 'Tarefa sem descrição'}}</div>
         <div class="column">
-            <Cronometro :tempoEmSegundos="15"/>
+            <Cronometro :tempoEmSegundos="tarefa.duracaoEmSegundos"/>
         </div>
     </div>
-</div>    
+</Box>    
 </template>
-<script lang="ts">
+<script>
 import { defineComponent } from 'vue'
 import Cronometro from './Cronometro.vue'
-
+import Box from './Box.vue'
 export default defineComponent({
+    /*eslint-disable-next-line*/
     name: 'Tarefa',
     components: {
         Cronometro,
+        Box
+    },
+    props: {
+        tarefa: {
+            required: true
+        }
     }
-})
-
+});
 </script>
